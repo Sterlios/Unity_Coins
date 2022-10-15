@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(GroundCheck))]
+[RequireComponent(typeof(GroundChecker))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int _speed = 2;
@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _sprite;
     private Rigidbody2D _rigidbody;
-    private GroundCheck _groundCheck;
+    private GroundChecker _groundCheck;
     private int _isRunHash;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _groundCheck = GetComponent<GroundCheck>();
+        _groundCheck = GetComponent<GroundChecker>();
         _isRunHash = Animator.StringToHash(IsRunName);
     }
 

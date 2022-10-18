@@ -5,12 +5,9 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     private float _maxValue = 1000f;
-    private int _percentage = 100;
 
     public float DeltaHealth => 150f;
-
     public float Value { get; private set; }
-
     public event UnityAction<float> Changed;
 
     private void Awake()
@@ -32,5 +29,5 @@ public class Health : MonoBehaviour
         Changed.Invoke(CalculatePercent());
     }
 
-    private float CalculatePercent() => Value / _maxValue * _percentage;
+    private float CalculatePercent() => Value / _maxValue;
 }

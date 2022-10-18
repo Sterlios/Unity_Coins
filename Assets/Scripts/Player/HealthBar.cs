@@ -34,8 +34,8 @@ public class HealthBar : MonoBehaviour
     {
         while (_slider.value != targetPercent)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, targetPercent, _step * Time.deltaTime);
-            _fillImage.color = GetFillColor(_slider.value / _slider.maxValue);
+            _slider.value = Mathf.MoveTowards(_slider.value, targetPercent * _slider.maxValue, _step * Time.deltaTime);
+            _fillImage.color = GetFillColor(targetPercent);
             yield return null;
         }
     }
